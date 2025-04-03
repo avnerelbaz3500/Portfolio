@@ -1,11 +1,52 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Avner EL BAZ | Portfolio</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* Custom styles */
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 20px;
+        }
+        #about, #associations, #skills {
+            text-align: center;
+        }
+        #about p, #associations p, #skills p {
+            font-size: 1.2rem;
+            color: #555;
+        }
+        .container h2 {
+            margin-bottom: 30px;
+        }
+        .nav-link {
+            font-size: 1.1rem;
+        }
+        .skills-list {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+        }
+        .skills-list li {
+            background: #007bff;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 20px;
+            font-weight: bold;
+        }
+        footer {
+            margin-top: 40px;
+        }
+    </style>
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -16,9 +57,11 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="#about">À propos</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#experience">Expérience</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#projects">Projets</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#associations">Associations</a></li>
                     <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
                 </ul>
             </div>
@@ -26,40 +69,67 @@
     </nav>
     
     <header class="bg-primary text-white text-center py-5">
-        <h1>Bienvenue sur mon Portfolio</h1>
+        <h1>Welcome to my Portfolio</h1>
         <p>Data Science | Machine Learning | Time Series | Cybersecurity</p>
     </header>
     
     <section id="about" class="container my-5">
-        <h2>À propos de moi</h2>
-        <p>Étudiant en Data Science à l'ENSAE Paris, passionné par le Machine Learning, la Cybersécurité et les Séries Temporelles.</p>
+        <h2>About Me</h2>
+        <img src="your-photo.jpg" alt="Photo of Avner EL BAZ" class="profile-img">
+        <p>Data Science student at ENSAE Paris, passionate about Machine Learning, Cybersecurity, and Time Series analysis.</p>
     </section>
-    
+
+    <section id="skills" class="container my-5">
+        <h2>Skills</h2>
+        <p>Here are the languages and technologies I work with:</p>
+        <ul class="skills-list">
+            <li>Python</li>
+            <li>Scikit-learn</li>
+            <li>Unsloth</li>
+            <li>Pandas</li>
+            <li>Numpy</li>
+            <li>Django</li>
+            <li>R</li>
+            <li>HTML/CSS/JavaScript</li>
+            <li>SQL</li>
+        </ul>
+    </section>
+
     <section id="experience" class="container my-5">
-        <h2>Expérience</h2>
+        <h2>Experience</h2>
         <ul>
-            <li><strong>Stage Sécurité Informatique - Télécom Paris (2024)</strong> : Développement d'un générateur de mots de passe en Django.</li>
-            <li><strong>Stage Summer Intern - Palatine Bank (2021)</strong> : Vérification de conformité des documents d'entreprise.</li>
+            <li><strong>Cybersecurity Internship - Télécom Paris (2024)</strong>: Developed a password generator using Django.</li>
+            <li><strong>Summer Intern - Palatine Bank (2021)</strong>: Corporate document compliance verification.</li>
         </ul>
     </section>
     
     <section id="projects" class="container my-5">
-        <h2>Projets</h2>
+        <h2>Projects</h2>
         <ul>
-            <li>🔹 <strong>Outil de Phishing Automatisé</strong> (Scikit-learn, LLaMA, Streamlit)</li>
-            <li>🔹 <strong>Analyse des Séries Temporelles</strong> (R, ARIMA, INSEE)</li>
-            <li>🔹 <strong>Prédiction des bornes de recharge</strong> (Scikit-learn, Pandas, Geopandas)</li>
+            <li>🔹 <strong>Automated Phishing Tool</strong> (Scikit-learn, LLaMA, Streamlit)</li>
+            <li>🔹 <strong>Time Series Analysis</strong> (R, ARIMA, INSEE)</li>
+            <li>🔹 <strong>Charging Station Prediction</strong> (Scikit-learn, Pandas, Geopandas)</li>
         </ul>
+    </section>
+
+    <section id="associations" class="container my-5">
+        <h2>Associations & Music</h2>
+        <p>I am an active member of two music associations at ENSAE Paris:</p>
+        <ul>
+            <li><strong>🎸 Rocksae:</strong> A rock music group where I play and participate in student events.</li>
+            <li><strong>🐧 Tuxae:</strong> An association dedicated to music and open-source culture.</li>
+        </ul>
+        <p>These experiences allow me to combine my passions for music and event management.</p>
     </section>
     
     <section id="contact" class="container my-5 text-center">
         <h2>Contact</h2>
-        <p>Email : <a href="mailto:avner.elbaz@ensae.fr">avner.elbaz@ensae.fr</a></p>
+        <p>Email: <a href="mailto:avner.elbaz@ensae.fr">avner.elbaz@ensae.fr</a></p>
         <p><a href="https://www.linkedin.com/in/avner-el-baz-a269a3295/">LinkedIn</a> | <a href="https://github.com/avnerelbaz3500">GitHub</a></p>
     </section>
     
     <footer class="bg-dark text-white text-center py-3">
-        <p>&copy; 2025 Avner EL BAZ - Tous droits réservés.</p>
+        <p>&copy; 2025 Avner EL BAZ - All rights reserved.</p>
     </footer>
     
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
