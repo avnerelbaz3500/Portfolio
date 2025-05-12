@@ -1,0 +1,58 @@
+/* Profile image */
+.profile-img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 20px;
+}
+
+/* Section alignment */
+#about, #associations, #skills {
+    text-align: center;
+}
+
+/* Paragraph text style */
+#about p, #associations p, #skills p {
+    font-size: 1.2rem;
+    color: #555;
+}
+
+/* Section headers */
+.container h2 {
+    margin-bottom: 30px;
+}
+
+/* Navigation link style */
+.nav-link {
+    font-size: 1.1rem;
+}
+
+/* Skills styling */
+.skills-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+}
+
+.skills-list li {
+    background: #007bff;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 20px;
+    font-weight: bold;
+}
+
+/* Footer spacing */
+footer {
+    margin-top: 40px;
+}
+
+/* Remove bullets from Rocksae/Tuxae section */
+#associations ul {
+    list-style: none;
+    padding: 0;
+}
