@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Géométrie du Discours Politique - Portfolio</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body class="bg-stone-950 text-stone-100 font-sans antialiased min-h-screen">
+
+    <header class="border-b border-stone-800 bg-stone-950/80 backdrop-blur sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+            <span class="text-xl font-bold tracking-tight bg-gradient-to-r from-amber-400 to-orange-500 bg-clip-text text-transparent">Contrastive Rhetoric</span>
+            <a href="#" class="text-sm text-stone-400 hover:text-stone-200 transition">← Retour</a>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-12">
+        <section class="bg-gradient-to-b from-stone-900 to-stone-950 border border-stone-800 rounded-2xl p-8 shadow-xl">
+            <div class="space-y-4">
+                <span class="px-3 py-1 text-xs font-semibold bg-amber-500/10 text-amber-400 border border-amber-500/20 rounded-full uppercase tracking-wider">Computational Social Science & NLP</span>
+                <h1 class="text-3xl sm:text-4xl font-extrabold text-white">Learning the Geometry of Political Discourse through Contrastive Rhetorical Deformations</h1>
+                <p class="text-stone-400 max-w-3xl text-base leading-relaxed">
+                    Une modélisation géométrique continue de la <em>langue de bois</em> dans le discours politique français (période 1981-1993)[cite: 461, 711]. L'approche substitue aux analyses lexicales de surface un apprentissage de représentation contrastif basé sur l'objectif Multi-Contrastive Noise Contrastive Estimation (NCE)[cite: 449, 701, 703].
+                </p>
+                <div class="flex flex-wrap gap-4 pt-2 text-sm text-stone-400">
+                    <div><span class="text-stone-500">Auteur :</span> Avner EL BAZ (Analyse complémentaire : Gabriel FRANCOIS) [cite: 669, 707]</div>
+                    <div><span class="text-stone-500">Données :</span> 12 497 documents normalisés, découpés en blocs de 450 tokens [cite: 712, 713]</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+            <div class="bg-stone-900/40 border border-stone-800 p-6 rounded-xl">
+                <p class="text-xs font-medium text-stone-400 uppercase tracking-wider">Taille du Corpus Réel</p>
+                <p class="text-4xl font-extrabold text-amber-400 mt-2">12 497</p>
+                <p class="text-xs text-stone-500 mt-2">Documents politiques français analysés (Manifestes, Déclarations).</p>
+            </div>
+            <div class="bg-stone-900/40 border border-stone-800 p-6 rounded-xl">
+                <p class="text-xs font-medium text-stone-400 uppercase tracking-wider">Segmentation Textuelle</p>
+                <p class="text-4xl font-extrabold text-orange-400 mt-2">450</p>
+                <p class="text-xs text-stone-500 mt-2">Tokens par chunk superposé avec un pas (stride) de 120 tokens[cite: 713].</p>
+            </div>
+            <div class="bg-stone-900/40 border border-stone-800 p-6 rounded-xl">
+                <p class="text-xs font-medium text-stone-400 uppercase tracking-wider">Couches Discursives</p>
+                <p class="text-4xl font-extrabold text-red-400 mt-2">3</p>
+                <p class="text-xs text-stone-500 mt-2">Familles de contraintes étudiées : structurelle, conceptuelle et informationnelle[cite: 526].</p>
+            </div>
+        </section>
+
+        <section class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <div class="lg:col-span-2 space-y-8">
+                <div class="bg-stone-900/20 border border-stone-800 rounded-xl p-6">
+                    <h3 class="text-lg font-bold text-white mb-4">Profil Théorique d'Activation des Contraintes Rhétoriques</h3>
+                    <div class="relative w-full h-80 flex justify-center">
+                        <canvas id="rhetoricRadarChart"></canvas>
+                    </div>
+                </div>
+
+                <div class="bg-stone-900/20 border border-stone-800 rounded-xl p-6 space-y-4">
+                    <h3 class="text-lg font-bold text-white">Objectif Multi-Contrastive NCE & Fonctionnelles</h3>
+                    <p class="text-stone-400 text-sm leading-relaxed">
+                        Le modèle apprend à séparer les formulations directes \(P_i\) de leurs déformations rhétoriques \(N_i\) via la fonction de coût contrastive suivante[cite: 761, 765]:
+                    </p>
+                    <div class="bg-stone-950 p-4 rounded-lg font-mono text-xs overflow-x-auto text-amber-300">
+                        \(\mathcal{L}(q,g_{i})=-log\frac{\sum_{p\in P_{i}}exp(sim(q,p)/\tau)}{\sum_{z\in P_{i}\cup N_{i}}exp(sim(q,z)/\tau)}\) [cite: 765]
+                    </div>
+                    <p class="text-stone-400 text-sm leading-relaxed">
+                        Deux fonctionnelles permettent d'évaluer l'espace latent au niveau des documents : le score de sensibilité extrême (\(Score_{D}^{max}\)) et le profil distributionnel (\(Score_{D}^{prof}\))[cite: 771, 772, 530]:
+                    </p>
+                    <div class="bg-stone-950 p-4 rounded-lg font-mono text-xs overflow-x-auto text-orange-300">
+                        \(Score_{D}^{max}=\frac{1}{n}\sum_{j=1}^{n}\max_{g_i \in \mathcal{G}} \mathcal{L}(c_j, g_i)\) [cite: 772]
+                    </div>
+                </div>
+            </div>
+
+            <div class="space-y-6">
+                <div class="bg-stone-900/40 border border-stone-800 rounded-xl p-6 h-full flex flex-col justify-between">
+                    <div>
+                        <h3 class="text-lg font-bold text-white mb-2">Papier Scientifique</h3>
+                        <p class="text-sm text-stone-400 mb-4">Lisez le manuscrit complet décrivant la géométrie non-isotrope stable induite par l'espace d'embeddings[cite: 453, 454].</p>
+                    </div>
+                    
+                    <div class="w-full bg-stone-950 rounded-lg overflow-hidden border border-stone-800 flex-grow min-h-[400px] relative">
+                        <embed src="Contrastive Rhetorical Deformations.pdf" type="application/pdf" class="w-full h-full absolute inset-0" />
+                    </div>
+
+                    <div class="pt-4">
+                        <a href="Contrastive Rhetorical Deformations.pdf" download class="w-full block text-center bg-amber-600 hover:bg-amber-500 text-stone-950 font-bold py-2.5 px-4 rounded-lg text-sm transition">
+                            Télécharger l'Article (PDF)
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+ research     </main>
+
+    <script>
+        const radarCtx = document.getElementById('rhetoricRadarChart').getContext('2d');
+        new Chart(radarCtx, {
+            type: 'radar',
+            data: {
+                labels: ['Structurel (\mathcal{S}_K)', 'Conceptuel (\mathcal{C}_K)', 'Informationnel (\mathcal{I}_K)'], // Répartition du profil discursif [cite: 526, 527]
+                datasets: [
+                    {
+                        label: 'Exemple Profil Extrême (e.g., FN / PCF)',
+                        data: [0.85, 0.78, 0.92],
+                        backgroundColor: 'rgba(245, 158, 11, 0.2)',
+                        borderColor: 'rgb(245, 158, 11)',
+                        pointBackgroundColor: 'rgb(245, 158, 11)'
+                    },
+                    {
+                        label: 'Exemple Profil Direct (e.g., Écologistes / Indépendants)',
+                        data: [0.32, 0.41, 0.25],
+                        backgroundColor: 'rgba(239, 68, 68, 0.2)',
+                        borderColor: 'rgb(239, 68, 68)',
+                        pointBackgroundColor: 'rgb(239, 68, 68)'
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    r: {
+                        angleLines: { color: 'rgba(255, 255, 255, 0.1)' },
+                        grid: { color: 'rgba(255, 255, 255, 0.1)' },
+                        pointLabels: { color: 'rgba(255, 255, 255, 0.7)', font: { size: 12 } },
+                        ticks: { display: false }
+                    }
+                },
+                plugins: {
+                    legend: { labels: { color: '#fff' } }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
