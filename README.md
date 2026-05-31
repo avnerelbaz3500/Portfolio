@@ -8,11 +8,11 @@ I am an **AI Engineering Apprentice** at Société Générale Assurance and a Ma
 
 ---
 
-## 🚀 Featured Projects
+## Featured Projects
 
 Here is an overview of the technical projects I have developed. You can explore the source code and detailed reports directly within this profile:
 
-### ⚡ CLaRion — CLaRa Parallelization
+### CLaRion — CLaRa Parallelization
 * **Technologies:** Cython, OpenMP, Python, RAG architectures.
 * **Objective:** Low-level optimization of a Retrieval-Augmented Generation (RAG) pipeline featuring encoder pretraining and joint training.
 * **Results:** Achieved substantial performance speedups over NumPy ($2.91\times$ for forward inference, $8.4\times$ for generation, and $2.45\times$ for training).
