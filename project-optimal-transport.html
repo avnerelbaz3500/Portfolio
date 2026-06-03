@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Regularized Optimal Transport - Scientific Portfolio</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body class="bg-slate-900 text-slate-100 font-sans antialiased min-h-screen">
+
+    <header class="border-b border-slate-800 bg-slate-900/80 backdrop-blur sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+            <span class="text-xl font-bold tracking-tight bg-gradient-to-r from-amber-400 to-orange-500 bg-clip-text text-transparent">Statistical Optimal Transport</span>
+            <a href="projects.html" class="text-sm text-slate-400 hover:text-slate-200 transition">← Back to portfolio</a>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-12">
+        <!-- Hero Section -->
+        <section class="bg-gradient-to-b from-slate-800/50 to-slate-900 border border-slate-800 rounded-2xl p-8 shadow-xl">
+            <div class="space-y-4">
+                <span class="px-3 py-1 text-xs font-semibold bg-amber-500/10 text-amber-400 border border-amber-500/20 rounded-full uppercase tracking-wider">Research Review & Harmonic Analysis</span>
+                <h1 class="text-3xl sm:text-4xl font-extrabold text-white">Statistical Optimal Transport: Article Review</h1>
+                <p class="text-slate-400 max-w-3xl text-base leading-relaxed">
+                    An in-depth analysis of the seminal paper <em>"Regularized Discrete Optimal Transport"</em> (Ferradans et al., SIAM 2014)[cite: 3]. This work explores relaxed formulations of the Kantorovich problem[cite: 3], the introduction of geometric graph-based regularizations such as Sobolev and Total Variation (TV)[cite: 3], along with their algorithmic application to high-resolution color palette transfers[cite: 3].
+                </p>
+                <div class="flex flex-wrap gap-4 pt-2 text-sm text-slate-400">
+                    <div><span class="text-slate-500">Review authors:</span> Avner El Baz & Daniel Truskinovsky[cite: 3]</div>
+                    <div><span class="text-slate-500">Publication date:</span> April 22, 2026[cite: 3]</div>
+                    <div><span class="text-slate-500">Key concepts:</span> Frank-Wolfe Algorithm, Total Unimodularity, OT Barycenters[cite: 3].</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- KPI Grid -->
+        <section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div class="bg-slate-800/30 border border-slate-800 p-6 rounded-xl shadow-sm hover:border-slate-700 transition">
+                <p class="text-xs font-medium text-slate-400 uppercase tracking-wider">Algorithmic Complexity</p>
+                <p class="text-4xl font-extrabold text-amber-400 mt-2">Frank-Wolfe</p>
+                <p class="text-xs text-slate-500 mt-2">Iterative projection-free scheme for solving linearized subproblems[cite: 3].</p>
+            </div>
+            <div class="bg-slate-800/30 border border-slate-800 p-6 rounded-xl shadow-sm hover:border-slate-700 transition">
+                <p class="text-xs font-medium text-slate-400 uppercase tracking-wider">Downsampling</p>
+                <p class="text-4xl font-extrabold text-blue-400 mt-2">K-Means</p>
+                <p class="text-xs text-slate-500 mt-2">Point cloud reduction (\(N=64, 144, 400\)) to make computation tractable[cite: 3].</p>
+            </div>
+            <div class="bg-slate-800/30 border border-slate-800 p-6 rounded-xl shadow-sm hover:border-slate-700 transition">
+                <p class="text-xs font-medium text-slate-400 uppercase tracking-wider">Regularization Topology</p>
+                <p class="text-4xl font-extrabold text-teal-400 mt-2">k-NN Graphs</p>
+                <p class="text-xs text-slate-500 mt-2">Penalization of irregular variations along the geometric data manifold[cite: 3].</p>
+            </div>
+            <div class="bg-slate-800/30 border border-slate-800 p-6 rounded-xl shadow-sm hover:border-slate-700 transition">
+                <p class="text-xs font-medium text-slate-400 uppercase tracking-wider">Integrality Property</p>
+                <p class="text-4xl font-extrabold text-purple-400 mt-2">TU Matrix</p>
+                <p class="text-xs text-slate-500 mt-2">Total unimodularity ensuring binary solutions at vertices under integer constraints[cite: 3].</p>
+            </div>
+        </section>
+
+        <!-- Technical Content Section -->
+        <section class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <div class="lg:col-span-2 space-y-8">
+                <!-- Chart Container -->
+                <div class="bg-slate-800/20 border border-slate-800 rounded-xl p-6">
+                    <h3 class="text-lg font-bold text-white mb-4">Qualitative Evolution of Transfer (Fidelity vs. Quantization Resolution $N$)</h3>
+                    <div class="relative w-full h-64">
+                        <canvas id="optimalTransportChart"></canvas>
+                    </div>
+                </div>
+
+                <!-- Deep Dive Explanations & MathJax formulas -->
+                <div class="bg-slate-800/20 border border-slate-800 rounded-xl p-6 space-y-4">
+                    <h3 class="text-lg font-bold text-white">Mathematical Formulation & Non-Local Regularization</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        To alleviate the rigidity of the strict coupling problem, the formulation introduces a relaxed transport polytope \(\mathcal{S}_{\kappa}\) weakening the classical marginal constraints[cite: 3]:
+                    </p>
+                    <div class="bg-slate-950 p-4 rounded-lg font-mono text-xs overflow-x-auto text-amber-300">
+                        \(\mathcal{S}_{\kappa} = \{\Sigma \in [0,1]^{N \times N} \mid k_X 1 \le \Sigma 1 \le K_X 1, \; k_Y 1 \le \Sigma^T 1 \le K_Y 1, \; 1^T \Sigma 1 = M\}\)
+                    </div>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        The underlying geometry is incorporated by applying a discrete gradient operator \(G_X\) on the data connectivity graph, where the regularization energy under the \((p,q)\) norm is written as[cite: 3]:
+                    </p>
+                    <div class="bg-slate-950 p-4 rounded-lg font-mono text-xs overflow-x-auto text-purple-300">
+                        \(I_{p,q}(G_X V) = \sum_{(i,j) \in E_X} \| w_{i,j}(V_i - V_j) \|_q^p\)
+                    </div>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        When \((p,q) = (1,1)\), the penalty corresponds to a non-smooth anisotropic Total Variation[cite: 3]. The global problem is then solved via a linear programming reformulation by introducing auxiliary variables bounding the geometric gradients[cite: 3].
+                    </p>
+                </div>
+            </div>
+
+            <!-- PDF Side Section -->
+            <div class="space-y-6">
+                <div class="bg-slate-800/40 border border-slate-800 rounded-xl p-6 h-full flex flex-col justify-between">
+                    <div>
+                        <h3 class="text-lg font-bold text-white mb-2">Scientific Analysis Report</h3>
+                        <p class="text-sm text-slate-400 mb-4">Access the full theoretical study, duality schemes, and comparative analyses of the algorithm.</p>
+                    </div>
+                    
+                    <div class="w-full bg-slate-950 rounded-lg overflow-hidden border border-slate-800 flex-grow min-h-[400px] relative">
+                        <embed src="Review_Statistical_OT.pdf" type="application/pdf" class="w-full h-full absolute inset-0" />
+                        <div class="absolute inset-0 flex items-center justify-center bg-slate-950/60 pointer-events-none md:hidden">
+                            <p class="text-xs text-slate-400 text-center px-4">PDF Preview (Available on wide screens or via download)</p>
+                        </div>
+                    </div>
+
+                    <div class="pt-4">
+                        <a href="Review_Statistical_OT.pdf" download class="w-full block text-center bg-amber-600 hover:bg-amber-500 text-white font-medium py-2.5 px-4 rounded-lg text-sm transition">
+                            Download Research Review (PDF)
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Graph Rendering Script -->
+    <script>
+        const ctx = document.getElementById('optimalTransportChart').getContext('2d');
+        new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: ['N=16 (Heavy noise)', 'N=64 (Coarse quantization)', 'N=144 (Intermediate)', 'N=400 (Optimal fidelity)'],
+                datasets: [
+                    {
+                        label: 'Chromatic Quantization Error',
+                        data: [8.2, 4.5, 2.1, 0.6],
+                        borderColor: 'rgb(239, 68, 68)',
+                        backgroundColor: 'rgba(239, 68, 68, 0.05)',
+                        borderWidth: 2,
+                        tension: 0.2
+                    },
+                    {
+                        label: 'Mode Regularity (Structure Preservation)',
+                        data: [35, 68, 89, 97],
+                        borderColor: 'rgb(34, 197, 94)',
+                        backgroundColor: 'rgba(34, 197, 94, 0.05)',
+                        borderWidth: 2,
+                        tension: 0.2,
+                        yAxisID: 'y1'
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        grid: { color: 'rgba(255, 255, 255, 0.05)' },
+                        ticks: { color: 'rgba(255, 255, 255, 0.6)' },
+                        title: { display: true, text: 'RMSE Error Index', color: 'rgba(255, 255, 255, 0.8)' }
+                    },
+                    y1: {
+                        beginAtZero: true,
+                        position: 'right',
+                        grid: { drawOnChartArea: false },
+                        ticks: { color: 'rgba(255, 255, 255, 0.6)' },
+                        title: { display: true, text: 'Structural Consistency Score (%)', color: 'rgba(255, 255, 255, 0.8)' }
+                    },
+                    x: {
+                        grid: { display: false },
+                        ticks: { color: 'rgba(255, 255, 255, 0.6)' }
+                    }
+                },
+                plugins: {
+                    legend: {
+                        labels: { color: 'rgba(255, 255, 255, 0.8)', font: { size: 11 } }
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>

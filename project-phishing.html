@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phishing Detection Portal - Portfolio Scientifique</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body class="bg-slate-900 text-slate-100 font-sans antialiased min-h-screen">
+
+<header class="border-b border-slate-800 bg-slate-900/80 backdrop-blur sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+        <span class="text-xl font-bold tracking-tight bg-gradient-to-r from-red-400 to-orange-500 bg-clip-text text-transparent">
+            Phishing Detection Research
+        </span>
+
+        <a href="projects.html"
+           class="text-sm text-slate-400 hover:text-slate-200 transition">
+            ← Retour aux projets
+        </a>
+    </div>
+</header>
+
+<main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-12">
+
+<section class="bg-gradient-to-b from-slate-800/50 to-slate-900 border border-slate-800 rounded-2xl p-8 shadow-xl">
+    <div class="space-y-4">
+
+        <span class="px-3 py-1 text-xs font-semibold bg-red-500/10 text-red-400 border border-red-500/20 rounded-full uppercase tracking-wider">
+            Cybersecurity & LLMs
+        </span>
+
+        <h1 class="text-3xl sm:text-4xl font-extrabold text-white">
+            Phishing Detection Portal
+        </h1>
+
+        <p class="text-slate-400 max-w-3xl leading-relaxed">
+            Research project exploring the limits of traditional phishing detection systems
+            through adversarial email generation, ReAct prompting strategies and
+            Phi-2 QLoRA fine-tuning.
+        </p>
+
+        <div class="flex flex-wrap gap-4 text-sm text-slate-400">
+            <div><span class="text-slate-500">Stack :</span> Python, Scikit-Learn, Phi-2, LoRA, QLoRA</div>
+            <div><span class="text-slate-500">Domain :</span> Cybersecurity & NLP</div>
+        </div>
+
+    </div>
+</section>
+
+<section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+
+    <div class="bg-slate-800/30 border border-slate-800 p-6 rounded-xl">
+        <p class="text-xs uppercase text-slate-400">Naive Bayes Precision</p>
+        <p class="text-4xl font-extrabold text-emerald-400 mt-2">
+            97.6%
+        </p>
+    </div>
+
+    <div class="bg-slate-800/30 border border-slate-800 p-6 rounded-xl">
+        <p class="text-xs uppercase text-slate-400">Detection After ReAct</p>
+        <p class="text-4xl font-extrabold text-orange-400 mt-2">
+            15%
+        </p>
+    </div>
+
+    <div class="bg-slate-800/30 border border-slate-800 p-6 rounded-xl">
+        <p class="text-xs uppercase text-slate-400">Phi-2 Detection Rate</p>
+        <p class="text-4xl font-extrabold text-red-400 mt-2">
+            22%
+        </p>
+    </div>
+
+    <div class="bg-slate-800/30 border border-slate-800 p-6 rounded-xl">
+        <p class="text-xs uppercase text-slate-400">Model Size</p>
+        <p class="text-4xl font-extrabold text-purple-400 mt-2">
+            2.7B
+        </p>
+    </div>
+
+</section>
+
+<section class="grid lg:grid-cols-3 gap-8">
+
+<div class="lg:col-span-2 space-y-8">
+
+<div class="bg-slate-800/20 border border-slate-800 rounded-xl p-6">
+    <h3 class="text-lg font-bold mb-4">
+        Evolution of Detection Rate
+    </h3>
+
+    <div class="relative w-full h-80">
+        <canvas id="reactChart"></canvas>
+    </div>
+</div>
+
+<div class="bg-slate-800/20 border border-slate-800 rounded-xl p-6">
+
+    <h3 class="text-lg font-bold text-white mb-4">
+        Research Overview
+    </h3>
+
+    <p class="text-slate-400 leading-relaxed">
+        The project investigates how large language models can generate increasingly
+        convincing phishing emails while simultaneously evaluating the robustness of
+        classical detection systems.
+    </p>
+
+    <br>
+
+    <p class="text-slate-400 leading-relaxed">
+        A Naive Bayes classifier was trained as a baseline detector before introducing
+        an adaptive ReAct loop where generated emails were continuously evaluated and
+        reinjected into future prompts.
+    </p>
+
+    <br>
+
+    <p class="text-slate-400 leading-relaxed">
+        The second stage focused on fine-tuning Phi-2 using QLoRA 4-bit quantization,
+        allowing efficient training while preserving strong language generation
+        capabilities.
+    </p>
+
+</div>
+
+</div>
+
+<div>
+
+<div class="bg-slate-800/40 border border-slate-800 rounded-xl p-6">
+
+    <h3 class="text-lg font-bold mb-4">
+        Research Paper
+    </h3>
+
+    <div class="w-full bg-slate-950 rounded-lg overflow-hidden border border-slate-800 min-h-[500px] relative">
+        <embed src="Synthese_statapp.pdf"
+               type="application/pdf"
+               class="w-full h-full absolute inset-0"/>
+    </div>
+
+    <div class="pt-4">
+        <a href="Synthese_statapp.pdf"
+           download
+           class="block w-full text-center bg-red-600 hover:bg-red-500 text-white py-2 rounded-lg">
+            Télécharger le PDF
+        </a>
+    </div>
+
+</div>
+
+</div>
+
+</section>
+
+</main>
+
+<script>
+
+const ctx = document.getElementById('reactChart');
+
+new Chart(ctx, {
+    type: 'line',
+    data: {
+        labels: ['0','1','2','3','4','5','6'],
+        datasets: [{
+            label: 'Detection Rate (%)',
+            data: [90,72,55,38,28,20,15],
+            tension: 0.4
+        }]
+    },
+    options: {
+        responsive: true,
+        maintainAspectRatio: false
+    }
+});
+
+</script>
+
+</body>
+</html>

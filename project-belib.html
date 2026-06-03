@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projet Belib Optimizer - Portfolio Scientifique</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body class="bg-slate-900 text-slate-100 font-sans antialiased min-h-screen">
+
+    <header class="border-b border-slate-800 bg-slate-900/80 backdrop-blur sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+            <span class="text-xl font-bold tracking-tight bg-gradient-to-r from-emerald-400 to-teal-500 bg-clip-text text-transparent">Belib Spatial Analytics</span>
+            <a href="projects.html" class="text-sm text-slate-400 hover:text-slate-200 transition">← Retour au portfolio</a>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-12">
+        <section class="bg-gradient-to-b from-slate-800/50 to-slate-900 border border-slate-800 rounded-2xl p-8 shadow-xl">
+            <div class="space-y-4">
+                <span class="px-3 py-1 text-xs font-semibold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 rounded-full uppercase tracking-wider">Géospatial & Algorithmique</span>
+                <h1 class="text-3xl sm:text-4xl font-extrabold text-white">Belib Location Optimizer : Analyse Électromobile Multi-Couches</h1>
+                <p class="text-slate-400 max-w-3xl text-base leading-relaxed">
+                    Un moteur d'optimisation de maillage et d'allocation géospatiale développé pour analyser la saturation des infrastructures de recharge de véhicules électriques (IRVE) à Paris. Le pipeline cartographie, discrétise et évalue la topologie de 1 200 grilles urbaines en croisant les flux de trafic en temps réel et la proximité géodésique.
+                </p>
+                <div class="flex flex-wrap gap-4 pt-2 text-sm text-slate-400">
+                    <div><span class="text-slate-500">Auteur :</span> Avner EL BAZ</div>
+                    <div><span class="text-slate-500">Frameworks :</span> GeoPandas, Shapely, Public API Data Paris, Python</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div class="bg-slate-800/30 border border-slate-800 p-6 rounded-xl shadow-sm hover:border-slate-700 transition">
+                <p class="text-xs font-medium text-slate-400 uppercase tracking-wider">Gain de Couverture</p>
+                <p class="text-4xl font-extrabold text-emerald-400 mt-2">+28.4%</p>
+                <p class="text-xs text-slate-500 mt-2">D'optimisation des points d'accès à moins de 400 mètres.</p>
+            </div>
+            <div class="bg-slate-800/30 border border-slate-800 p-6 rounded-xl shadow-sm hover:border-slate-700 transition">
+                <p class="text-xs font-medium text-slate-400 uppercase tracking-wider">Stations Modélisées</p>
+                <p class="text-4xl font-extrabold text-blue-400 mt-2">1,200+</p>
+                <p class="text-xs text-slate-500 mt-2">Bornes EV indexées dynamiquement via API publique.</p>
+            </div>
+            <div class="bg-slate-800/30 border border-slate-800 p-6 rounded-xl shadow-sm hover:border-slate-700 transition">
+                <p class="text-xs font-medium text-slate-400 uppercase tracking-wider">Vitesse d'Intersection</p>
+                <p class="text-4xl font-extrabold text-teal-400 mt-2">&lt;14ms</p>
+                <p class="text-xs text-slate-500 mt-2">Par requête de polygones grâce à l'indexation R-Tree.</p>
+            </div>
+            <div class="bg-slate-800/30 border border-slate-800 p-6 rounded-xl shadow-sm hover:border-slate-700 transition">
+                <p class="text-xs font-medium text-slate-400 uppercase tracking-wider">Complexité de Cross-Join</p>
+                <p class="text-4xl font-extrabold text-purple-400 mt-2">\(\mathcal{O}(N \log N)\)</p>
+                <p class="text-xs text-slate-500 mt-2">Au lieu de \(\mathcal{O}(N^2)\) via l'optimisation des matrices de Haversine.</p>
+            </div>
+        </section>
+
+        <section class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <div class="lg:col-span-2 space-y-8">
+                <div class="bg-slate-800/20 border border-slate-800 rounded-xl p-6">
+                    <h3 class="text-lg font-bold text-white mb-4">Analyse de l'Indice d'Insatisfaction par Arrondissement</h3>
+                    <div class="relative w-full h-64">
+                        <canvas id="spatialOptimizerChart"></canvas>
+                    </div>
+                </div>
+
+                <div class="bg-slate-800/20 border border-slate-800 rounded-xl p-6 space-y-4">
+                    <h3 class="text-lg font-bold text-white">Algorithmes Spatiaux & Modélisation Géodésique</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        Afin de s'affranchir des distorsions de projection planes sur l'échelle intra-muros parisienne, le pipeline convertit les coordonnées topographiques via la formule géodésique de Haversine. Elle permet d'établir une matrice de distance exacte entre les centroïdes de trafic \(C_i\) et les coordonnées des stations de charge \(S_j\) :
+                    </p>
+                    <div class="bg-slate-950 p-4 rounded-lg font-mono text-xs overflow-x-auto text-emerald-300">
+                        d = 2R \cdot \arcsin\left(\sqrt{\sin^2\left(\frac{\Delta \phi}{2}\right) + \cos(\phi_1)\cos(\phi_2)\sin^2\left(\frac{\Delta \lambda}{2}\right)}\right)
+                    </div>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        Pour définir les emplacements optimaux (index de congestion \(I_c\)), le modèle combine l'intensité des flux routiers normalisés \(F_n\) et la densité inverse du réseau de recharge existant dans un rayon tampon \(r\). La fonction objective vise à minimiser la variance résiduelle de cette distribution :
+                    </p>
+                    <div class="bg-slate-950 p-4 rounded-lg font-mono text-xs overflow-x-auto text-purple-300">
+                        \(I_c(x) = \sum_{i=1}^{N} \frac{F_n(C_i)}{\text{dist}(x, S_i)^2 + \epsilon} \cdot \mathbf{1}_{\{\text{dist}(x, S_i) \le r\}}\)
+                    </div>
+                </div>
+            </div>
+
+            <div class="space-y-6">
+                <div class="bg-slate-800/40 border border-slate-800 rounded-xl p-6 h-full flex flex-col justify-between">
+                    <div>
+                        <h3 class="text-lg font-bold text-white mb-2">Rapport d'Analyse</h3>
+                        <p class="text-sm text-slate-400 mb-4">Visualisez les résultats cartographiques et statistiques complets de l'étude urbaine.</p>
+                    </div>
+                    
+                    <div class="w-full bg-slate-950 rounded-lg overflow-hidden border border-slate-800 flex-grow min-h-[400px] relative">
+                        <embed src="Report_Belib_Optimizer.pdf" type="application/pdf" class="w-full h-full absolute inset-0" />
+                        <div class="absolute inset-0 flex items-center justify-center bg-slate-950/60 pointer-events-none md:hidden">
+                            <p class="text-xs text-slate-400 text-center px-4">Aperçu PDF (Agrandir sur écran large ou téléchargez le document)</p>
+                        </div>
+                    </div>
+
+                    <div class="pt-4">
+                        <a href="Report_Belib_Optimizer.pdf" download class="w-full block text-center bg-emerald-600 hover:bg-emerald-500 text-white font-medium py-2.5 px-4 rounded-lg text-sm transition">
+                            Télécharger le rapport complet (PDF)
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        const ctx = document.getElementById('spatialOptimizerChart').getContext('2d');
+        new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: ['Centre (1-4e)', 'Rive Gauche (5-7e)', 'Ouest (8-16e)', 'Est (11-20e)', 'Périphérie (13-15e)'],
+                datasets: [{
+                    label: 'Indice de Demande Non Satisfaite (Trafic vs Prises Libres)',
+                    data: [1.2, 2.8, 5.4, 4.1, 6.9],
+                    backgroundColor: 'rgba(16, 185, 129, 0.1)',
+                    borderColor: 'rgb(16, 185, 129)',
+                    borderWidth: 3,
+                    tension: 0.3,
+                    fill: true,
+                    pointBackgroundColor: 'rgb(20, 184, 166)',
+                    pointRadius: 5
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { display: false },
+                    tooltip: { callbacks: { label: (context) => ` Indice d'insatisfaction : ${context.raw}` } }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        grid: { color: 'rgba(255, 255, 255, 0.05)' },
+                        ticks: { color: 'rgba(255, 255, 255, 0.6)' }
+                    },
+                    x: {
+                        grid: { display: false },
+                        ticks: { color: 'rgba(255, 255, 255, 0.6)' }
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
