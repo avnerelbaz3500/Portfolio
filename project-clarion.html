@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projet CLARION - Portfolio Scientifique</title>
+    <title>CLARION Project - Scientific Portfolio</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
@@ -13,70 +13,70 @@
     <header class="border-b border-slate-800 bg-slate-900/80 backdrop-blur sticky top-0 z-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
             <span class="text-xl font-bold tracking-tight bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">CLARION Research</span>
-            <a href="projects.html" class="text-sm text-slate-400 hover:text-slate-200 transition">← Retour au portfolio</a>
+            <a href="projects.html" class="text-sm text-slate-400 hover:text-slate-200 transition">← Back to portfolio</a>
         </div>
     </header>
 
     <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-12">
         <section class="bg-gradient-to-b from-slate-800/50 to-slate-900 border border-slate-800 rounded-2xl p-8 shadow-xl">
             <div class="space-y-4">
-                <span class="px-3 py-1 text-xs font-semibold bg-cyan-500/10 text-cyan-400 border border-cyan-500/20 rounded-full uppercase tracking-wider">Optimisation & RAG</span>
-                <h1 class="text-3xl sm:text-4xl font-extrabold text-white">CLARION : Continuous Latent Augmented-Retrieval Inference On N-cores</h1>
+                <span class="px-3 py-1 text-xs font-semibold bg-cyan-500/10 text-cyan-400 border border-cyan-500/20 rounded-full uppercase tracking-wider">Optimization & RAG</span>
+                <h1 class="text-3xl sm:text-4xl font-extrabold text-white">CLARION: Continuous Latent Augmented-Retrieval Inference On N-cores</h1>
                 <p class="text-slate-400 max-w-3xl text-base leading-relaxed">
-                    Une réimplémentation parallèle sur CPU de l'architecture de RAG continu <strong>CLaRa</strong>, conçue pour éliminer les goulots d'étranglement de calcul d'embeddings et de recherche de similarité cosinus via une approche hybride NumPy + Cython et OpenMP[cite: 128, 133, 135].
+                    A parallel CPU reimplementation of the <strong>CLaRa</strong> continuous RAG architecture, designed to eliminate computational bottlenecks in embedding generation and cosine similarity search via a hybrid NumPy + Cython and OpenMP approach.
                 </p>
                 <div class="flex flex-wrap gap-4 pt-2 text-sm text-slate-400">
-                    <div><span class="text-slate-500">Auteurs :</span> Avner EL BAZ, Paco GOZE [cite: 129]</div>
-                    <div><span class="text-slate-500">Framework :</span> Python, NumPy, Cython, OpenMP [cite: 135, 158]</div>
+                    <div><span class="text-slate-500">Authors:</span> Avner EL BAZ, Paco GOZE</div>
+                    <div><span class="text-slate-500">Framework:</span> Python, NumPy, Cython, OpenMP</div>
                 </div>
             </div>
         </section>
 
         <section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             <div class="bg-slate-800/30 border border-slate-800 p-6 rounded-xl shadow-sm hover:border-slate-700 transition">
-                <p class="text-xs font-medium text-slate-400 uppercase tracking-wider">Accélération Génération</p>
+                <p class="text-xs font-medium text-slate-400 uppercase tracking-wider">Generation Speedup</p>
                 <p class="text-4xl font-extrabold text-cyan-400 mt-2">×4.95</p>
-                <p class="text-xs text-slate-500 mt-2">Sur la génération de texte autoregressive[cite: 137].</p>
+                <p class="text-xs text-slate-500 mt-2">On autoregressive text generation.</p>
             </div>
             <div class="bg-slate-800/30 border border-slate-800 p-6 rounded-xl shadow-sm hover:border-slate-700 transition">
-                <p class="text-xs font-medium text-slate-400 uppercase tracking-wider">Accélération Inférence</p>
+                <p class="text-xs font-medium text-slate-400 uppercase tracking-wider">Inference Speedup</p>
                 <p class="text-4xl font-extrabold text-blue-400 mt-2">×2.35</p>
-                <p class="text-xs text-slate-500 mt-2">Passe forward globale réduite[cite: 137].</p>
+                <p class="text-xs text-slate-500 mt-2">Reduced global forward pass.</p>
             </div>
             <div class="bg-slate-800/30 border border-slate-800 p-6 rounded-xl shadow-sm hover:border-slate-700 transition">
-                <p class="text-xs font-medium text-slate-400 uppercase tracking-wider">Entraînement Joint</p>
+                <p class="text-xs font-medium text-slate-400 uppercase tracking-wider">Joint Training</p>
                 <p class="text-4xl font-extrabold text-emerald-400 mt-2">×3.16</p>
-                <p class="text-xs text-slate-500 mt-2">Optimisation de l'architecture bout-en-bout[cite: 138].</p>
+                <p class="text-xs text-slate-500 mt-2">End-to-end architecture optimization.</p>
             </div>
             <div class="bg-slate-800/30 border border-slate-800 p-6 rounded-xl shadow-sm hover:border-slate-700 transition">
-                <p class="text-xs font-medium text-slate-400 uppercase tracking-wider">Mémoire Tampon Top-K</p>
+                <p class="text-xs font-medium text-slate-400 uppercase tracking-wider">Top-K Buffer Memory</p>
                 <p class="text-4xl font-extrabold text-purple-400 mt-2">\(\mathcal{O}(B \cdot K)\)</p>
-                <p class="text-xs text-slate-500 mt-2">Au lieu de \(\mathcal{O}(B \cdot N)\) grâce aux kernels fusionnés[cite: 188].</p>
+                <p class="text-xs text-slate-500 mt-2">Instead of \(\mathcal{O}(B \cdot N)\) thanks to fused kernels.</p>
             </div>
         </section>
 
         <section class="grid grid-cols-1 lg:grid-cols-3 gap-8">
             <div class="lg:col-span-2 space-y-8">
                 <div class="bg-slate-800/20 border border-slate-800 rounded-xl p-6">
-                    <h3 class="text-lg font-bold text-white mb-4">Analyse des Facteurs d'Accélération (Speedup Multi-Core)</h3>
+                    <h3 class="text-lg font-bold text-white mb-4">Multi-Core Speedup Factors Analysis</h3>
                     <div class="relative w-full h-64">
                         <canvas id="speedupChart"></canvas>
                     </div>
                 </div>
 
                 <div class="bg-slate-800/20 border border-slate-800 rounded-xl p-6 space-y-4">
-                    <h3 class="text-lg font-bold text-white">Architecture Fondamentale & Noyau Fusionné</h3>
+                    <h3 class="text-lg font-bold text-white">Fundamental Architecture & Fused Kernel</h3>
                     <p class="text-slate-400 text-sm leading-relaxed">
-                        Le backend optimisé réorganise les tenseurs au format <em>C-contiguous</em> pour exploiter la vectorisation SIMD du compilateur[cite: 156, 158, 163]. L'attention s'effectue en mode continu (streaming) par blocs pour éviter l'allocation globale[cite: 170, 171]:
+                        The optimized backend reorganizes tensors into <em>C-contiguous</em> format to leverage the compiler's SIMD vectorization. Attention is performed in continuous (streaming) mode by blocks to avoid global allocation:
                     </p>
                     <div class="bg-slate-950 p-4 rounded-lg font-mono text-xs overflow-x-auto text-cyan-300">
-                        Attention(Q, K, V) = softmax\(\left(\frac{QK^\top}{\sqrt{d_k}}\right)V\) [cite: 165]
+                        Attention(Q, K, V) = softmax\(\left(\frac{QK^\top}{\sqrt{d_k}}\right)V\)
                     </div>
                     <p class="text-slate-400 text-sm leading-relaxed">
-                        Pour propager les gradients à travers le routage discret Top-K, le pipeline implémente un estimateur Straight-Through (STE) avec une relaxation Softmax lors de la rétropropagation[cite: 196, 197]:
+                        To propagate gradients through discrete Top-K routing, the pipeline implements a Straight-Through Estimator (STE) with a Softmax relaxation during backpropagation:
                     </p>
                     <div class="bg-slate-950 p-4 rounded-lg font-mono text-xs overflow-x-auto text-purple-300">
-                        \(\nabla s_{b}=\frac{1}{\tau}p_{b}\odot(\nabla y_{b}-\langle\nabla y_{b},p_{b}\rangle)\) [cite: 199]
+                        \(\nabla s_{b}=\frac{1}{\tau}p_{b}\odot(\nabla y_{b}-\langle\nabla y_{b},p_{b}\rangle)\)
                     </div>
                 </div>
             </div>
@@ -84,20 +84,20 @@
             <div class="space-y-6">
                 <div class="bg-slate-800/40 border border-slate-800 rounded-xl p-6 h-full flex flex-col justify-between">
                     <div>
-                        <h3 class="text-lg font-bold text-white mb-2">Papier de Recherche</h3>
-                        <p class="text-sm text-slate-400 mb-4">Consultez l'article scientifique complet au format PDF directement ci-dessous.</p>
+                        <h3 class="text-lg font-bold text-white mb-2">Research Paper</h3>
+                        <p class="text-sm text-slate-400 mb-4">View the full scientific article in PDF format directly below.</p>
                     </div>
                     
                     <div class="w-full bg-slate-950 rounded-lg overflow-hidden border border-slate-800 flex-grow min-h-[400px] relative">
                         <embed src="Report_CLaRion.pdf" type="application/pdf" class="w-full h-full absolute inset-0" />
                         <div class="absolute inset-0 flex items-center justify-center bg-slate-950/60 pointer-events-none md:hidden">
-                            <p class="text-xs text-slate-400 text-center px-4">Aperçu PDF (Agrandir sur écran large ou téléchargez le document)</p>
+                            <p class="text-xs text-slate-400 text-center px-4">PDF Preview (Expand on wide screens or download the document)</p>
                         </div>
                     </div>
 
                     <div class="pt-4">
                         <a href="Report_CLaRion.pdf" download class="w-full block text-center bg-cyan-600 hover:bg-cyan-500 text-white font-medium py-2.5 px-4 rounded-lg text-sm transition">
-                            Télécharger le PDF complet
+                            Download Full PDF
                         </a>
                     </div>
                 </div>
@@ -110,10 +110,10 @@
         new Chart(ctx, {
             type: 'bar',
             data: {
-                labels: ['Préentraînement Encodeur', 'Inférence Forward', 'Entraînement Joint', 'Génération Textuelle'],
+                labels: ['Encoder Pre-training', 'Inference Forward', 'Joint Training', 'Text Generation'],
                 datasets: [{
-                    label: 'Facteur d\'accélération (Cython vs NumPy)',
-                    data: [1.68, 2.35, 3.16, 4.95], // Données issues du papier [cite: 137, 138]
+                    label: 'Speedup factor (Cython vs NumPy)',
+                    data: [1.68, 2.35, 3.16, 4.95],
                     backgroundColor: [
                         'rgba(34, 211, 238, 0.2)',
                         'rgba(59, 130, 246, 0.2)',

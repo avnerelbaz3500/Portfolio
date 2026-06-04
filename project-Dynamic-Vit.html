@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,7 +13,7 @@
     <header class="border-b border-zinc-800 bg-zinc-900/90 backdrop-blur sticky top-0 z-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
             <span class="text-xl font-bold tracking-tight bg-gradient-to-r from-violet-400 to-fuchsia-500 bg-clip-text text-transparent">Dynamic ViT Hub</span>
-            <a href="projects.html" class="text-sm text-zinc-400 hover:text-zinc-200 transition">← Retour</a>
+            <a href="projects.html" class="text-sm text-zinc-400 hover:text-zinc-200 transition">← Back</a>
         </div>
     </header>
 
@@ -23,57 +23,57 @@
                 <span class="px-3 py-1 text-xs font-semibold bg-violet-500/10 text-violet-400 border border-violet-500/20 rounded-full uppercase tracking-wider">Computer Vision & Efficient AI</span>
                 <h1 class="text-3xl sm:text-4xl font-extrabold text-white">Token-Pruned Dynamic ViT with LoRA Adaptation for Efficient On-Device Inference</h1>
                 <p class="text-zinc-400 max-w-3xl text-base leading-relaxed">
-                    Compression et adaptation fine d'architectures de Transformers de vision (ViT) pour des terminaux embarqués[cite: 1007]. Le pipeline réduit la complexité quadratique de l'auto-attention \(\mathcal{O}(N^2)\) en élaguant les tokens non informatifs aux couches intermédiaires 4, 7 et 10, tout en adaptant les poids via LoRA[cite: 1018, 1054, 1207].
+                    Compression and fine-tuning of Vision Transformer (ViT) architectures for edge devices. The pipeline reduces the quadratic complexity of self-attention \(\mathcal{O}(N^2)\) by pruning non-informative tokens at intermediate layers 4, 7, and 10, while adapting weights via LoRA.
                 </p>
                 <div class="flex flex-wrap gap-4 pt-2 text-sm text-zinc-400">
-                    <div><span class="text-zinc-500">Auteurs :</span> Gabriel FRANÇOIS, Léo LEROY, Avner EL BAZ (ENSAE 2026) [cite: 1180, 1181, 1182, 1206]</div>
-                    <div><span class="text-zinc-500">Datasets :</span> ImageNet-1k, STL-10, CIFAR-100 [cite: 1031, 1032]</div>
+                    <div><span class="text-zinc-500">Authors:</span> Gabriel FRANÇOIS, Léo LEROY, Avner EL BAZ (ENSAE 2026)</div>
+                    <div><span class="text-zinc-500">Datasets:</span> ImageNet-1k, STL-10, CIFAR-100</div>
                 </div>
             </div>
         </section>
 
         <section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             <div class="bg-zinc-800/40 border border-zinc-800 p-6 rounded-xl">
-                <p class="text-xs font-medium text-zinc-400 uppercase tracking-wider">Élagage maximal à L10</p>
+                <p class="text-xs font-medium text-zinc-400 uppercase tracking-wider">Max Pruning at L10</p>
                 <p class="text-4xl font-extrabold text-violet-400 mt-2">91%</p>
-                <p class="text-xs text-zinc-500 mt-2">Seulement 9% des tokens conservés à la couche finale (keep_rate = 0.09)[cite: 1050, 1051].</p>
+                <p class="text-xs text-zinc-500 mt-2">Only 9% of tokens retained at the final layer (keep_rate = 0.09).</p>
             </div>
             <div class="bg-zinc-800/40 border border-zinc-800 p-6 rounded-xl">
-                <p class="text-xs font-medium text-zinc-400 uppercase tracking-wider">Précision après Finetuning LoRA</p>
+                <p class="text-xs font-medium text-zinc-400 uppercase tracking-wider">Accuracy after LoRA Finetuning</p>
                 <p class="text-4xl font-extrabold text-fuchsia-400 mt-2">~65%</p>
-                <p class="text-xs text-zinc-500 mt-2">Exactitude atteinte rapidement sur l'ensemble de test STL-10.</p>
+                <p class="text-xs text-zinc-500 mt-2">Accuracy achieved quickly on the STL-10 test set.</p>
             </div>
             <div class="bg-zinc-800/40 border border-zinc-800 p-6 rounded-xl">
-                <p class="text-xs font-medium text-zinc-400 uppercase tracking-wider">Réduction Flops</p>
+                <p class="text-xs font-medium text-zinc-400 uppercase tracking-wider">FLOPs Reduction</p>
                 <p class="text-4xl font-extrabold text-purple-400 mt-2">-33%</p>
-                <p class="text-xs text-zinc-500 mt-2">Le modèle passe de 0,18 GFLOPs (Teacher) à 0,12 GFLOPs (Student élagué).</p>
+                <p class="text-xs text-zinc-500 mt-2">The model goes from 0.18 GFLOPs (Teacher) to 0.12 GFLOPs (Pruned Student).</p>
             </div>
             <div class="bg-zinc-800/40 border border-zinc-800 p-6 rounded-xl">
-                <p class="text-xs font-medium text-zinc-400 uppercase tracking-wider">Taille paramétrique basse</p>
+                <p class="text-xs font-medium text-zinc-400 uppercase tracking-wider">Low Parameter Size</p>
                 <p class="text-4xl font-extrabold text-pink-400 mt-2">1.56M</p>
-                <p class="text-xs text-zinc-500 mt-2">Volume réduit de paramètres pour s'adapter aux contraintes edge.</p>
+                <p class="text-xs text-zinc-500 mt-2">Reduced volume of parameters to fit edge constraints.</p>
             </div>
         </section>
 
         <section class="grid grid-cols-1 lg:grid-cols-3 gap-8">
             <div class="lg:col-span-2 space-y-8">
                 <div class="bg-zinc-800/20 border border-zinc-800 rounded-xl p-6">
-                    <h3 class="text-lg font-bold text-white mb-4">Profil de Rétention des Patchs d'Image par Couche</h3>
+                    <h3 class="text-lg font-bold text-white mb-4">Image Patch Retention Profile by Layer</h3>
                     <div class="relative w-full h-64">
                         <canvas id="pruningLayersChart"></canvas>
                     </div>
                 </div>
 
                 <div class="bg-zinc-800/20 border border-zinc-800 rounded-xl p-6 space-y-4">
-                    <h3 class="text-lg font-bold text-white">Mécanisme d'auto-attention & Élagage Adaptatif</h3>
+                    <h3 class="text-lg font-bold text-white">Self-Attention Mechanism & Adaptive Pruning</h3>
                     <p class="text-zinc-400 text-sm leading-relaxed">
-                        L'équation de base des blocs d'attention MSA est calculée sur l'ensemble des patchs de l'image découpée[cite: 1221, 1225, 1226]:
+                        The base equation for MSA attention blocks is calculated over all patches of the cropped image:
                     </p>
                     <div class="bg-zinc-950 p-4 rounded-lg font-mono text-xs overflow-x-auto text-violet-300">
-                        \(z_{l}^{\prime}=MSA(LN(z_{l-1}))+z_{l-1}\) [cite: 1226]
+                        \(z_{l}^{\prime}=MSA(LN(z_{l-1}))+z_{l-1}\)
                     </div>
                     <p class="text-zinc-400 text-sm leading-relaxed">
-                        Afin de stabiliser la convergence et d'éviter un effondrement précoce des performances, le pipeline déploie un <strong>calendrier d'élagage sigmoïdal adaptatif</strong> qui orchestre le taux de rétention de manière lissée au fil des époques[cite: 1011].
+                        To stabilize convergence and avoid early performance collapse, the pipeline deploys an <strong>adaptive sigmoidal pruning schedule</strong> that orchestrates the retention rate smoothly across epochs.
                     </p>
                 </div>
             </div>
@@ -81,8 +81,8 @@
             <div class="space-y-6">
                 <div class="bg-zinc-800/40 border border-zinc-800 rounded-xl p-6 h-full flex flex-col justify-between">
                     <div>
-                        <h3 class="text-lg font-bold text-white mb-2">Rapport du Projet</h3>
-                        <p class="text-sm text-zinc-400 mb-4">Parcourez le document de validation et de reproductibilité de Dynamic ViT avec adaptation LoRA[cite: 1011, 1209].</p>
+                        <h3 class="text-lg font-bold text-white mb-2">Project Report</h3>
+                        <p class="text-sm text-zinc-400 mb-4">Browse the validation and reproducibility document for Dynamic ViT with LoRA adaptation.</p>
                     </div>
                     
                     <div class="w-full bg-zinc-950 rounded-lg overflow-hidden border border-zinc-800 flex-grow min-h-[400px] relative">
@@ -91,7 +91,7 @@
 
                     <div class="pt-4">
                         <a href="Projet_VIT.pdf" download class="w-full block text-center bg-violet-600 hover:bg-violet-500 text-white font-medium py-2.5 px-4 rounded-lg text-sm transition">
-                            Télécharger l'Article (PDF)
+                            Download Article (PDF)
                         </a>
                     </div>
                 </div>
@@ -104,10 +104,10 @@
         new Chart(pruneCtx, {
             type: 'line',
             data: {
-                labels: ['Entrée (Origine)', 'Couche 4 (L4)', 'Couche 7 (L7)', 'Couche 10 (L10)'],
+                labels: ['Input (Original)', 'Layer 4 (L4)', 'Layer 7 (L7)', 'Layer 10 (L10)'],
                 datasets: [{
-                    label: 'Taux de tokens préservés (keep_rate)',
-                    data: [1.0, 0.69, 0.33, 0.09], // Métriques issues du cas d'école décrit dans le papier [cite: 1050, 1051]
+                    label: 'Retention rate of tokens (keep_rate)',
+                    data: [1.0, 0.69, 0.33, 0.09],
                     borderColor: 'rgb(139, 92, 246)',
                     backgroundColor: 'rgba(139, 92, 246, 0.1)',
                     borderWidth: 3,

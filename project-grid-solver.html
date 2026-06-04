@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Combinatorial Grid Solver - Portfolio Scientifique</title>
+    <title>Combinatorial Grid Solver - Scientific Portfolio</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
@@ -13,7 +13,7 @@
     <header class="border-b border-slate-800 bg-slate-900/80 backdrop-blur sticky top-0 z-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
             <span class="text-xl font-bold tracking-tight bg-gradient-to-r from-blue-400 to-indigo-500 bg-clip-text text-transparent">Combinatorial Optimization</span>
-            <a href="projects.html" class="text-sm text-slate-400 hover:text-slate-200 transition">← Retour au portfolio</a>
+            <a href="projects.html" class="text-sm text-slate-400 hover:text-slate-200 transition">← Back to portfolio</a>
         </div>
     </header>
 
@@ -21,15 +21,15 @@
         <!-- Hero Section -->
         <section class="bg-gradient-to-b from-slate-800/50 to-slate-900 border border-slate-800 rounded-2xl p-8 shadow-xl">
             <div class="space-y-4">
-                <span class="px-3 py-1 text-xs font-semibold bg-blue-500/10 text-blue-400 border border-blue-500/20 rounded-full uppercase tracking-wider">Algorithmique Avancée & Théorie des Graphes</span>
-                <h1 class="text-3xl sm:text-4xl font-extrabold text-white">Moteur de Résolution Algorithmique de Grilles de Permutation</h1>
+                <span class="px-3 py-1 text-xs font-semibold bg-blue-500/10 text-blue-400 border border-blue-500/20 rounded-full uppercase tracking-wider">Advanced Algorithms & Graph Theory</span>
+                <h1 class="text-3xl sm:text-4xl font-extrabold text-white">Algorithmic Solver for Permutation Grids</h1>
                 <p class="text-slate-400 max-w-3xl text-base leading-relaxed">
-                    Développement d'une infrastructure logicielle permettant de déterminer le chemin d'inversion minimal pour trier une matrice discrète de dimension \(m \times n\). Ce système modélise l'espace des configurations sous forme de graphe dynamique interconnecté et implémente des stratégies de recherche informée pour contourner la complexité combinatoire.
+                    Development of a software infrastructure to determine the minimal inversion path for sorting a discrete matrix of dimension \(m \times n\). This system models the configuration space as an interconnected dynamic graph and implements informed search strategies to overcome combinatorial complexity.
                 </p>
                 <div class="flex flex-wrap gap-4 pt-2 text-sm text-slate-400">
-                    <div><span class="text-slate-500">Institution :</span> ENSAE ParisTech</div>
-                    <div><span class="text-slate-500">Auteurs :</span> Avner EL BAZ, Stanislas DEKERLE</div>
-                    <div><span class="text-slate-500">Stack :</span> Python, PyGame, Min-Heap / Priority Queues</div>
+                    <div><span class="text-slate-500">Institution:</span> ENSAE ParisTech</div>
+                    <div><span class="text-slate-500">Authors:</span> Avner EL BAZ, Stanislas DEKERLE</div>
+                    <div><span class="text-slate-500">Stack:</span> Python, PyGame, Min-Heap / Priority Queues</div>
                 </div>
             </div>
         </section>
@@ -37,24 +37,24 @@
         <!-- KPI Grid -->
         <section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             <div class="bg-slate-800/30 border border-slate-800 p-6 rounded-xl shadow-sm hover:border-slate-700 transition">
-                <p class="text-xs font-medium text-slate-400 uppercase tracking-wider">Complexité Gloutonne</p>
+                <p class="text-xs font-medium text-slate-400 uppercase tracking-wider">Greedy Complexity</p>
                 <p class="text-4xl font-extrabold text-red-400 mt-2">\(\mathcal{O}(m^2n^2)\)</p>
-                <p class="text-xs text-slate-500 mt-2">Algorithme naïf générant des permutations redondantes.</p>
+                <p class="text-xs text-slate-500 mt-2">Naive algorithm generating redundant permutations.</p>
             </div>
             <div class="bg-slate-800/30 border border-slate-800 p-6 rounded-xl shadow-sm hover:border-slate-700 transition">
-                <p class="text-xs font-medium text-slate-400 uppercase tracking-wider">Optimisation Graph</p>
-                <p class="text-4xl font-extrabold text-indigo-400 mt-2">À la volée</p>
-                <p class="text-xs text-slate-500 mt-2">Couplage BFS/A* évitant l'instanciation totale de la topologie.</p>
+                <p class="text-xs font-medium text-slate-400 uppercase tracking-wider">Graph Optimization</p>
+                <p class="text-4xl font-extrabold text-indigo-400 mt-2">On-the-fly</p>
+                <p class="text-xs text-slate-500 mt-2">BFS/A* coupling avoiding full topology instantiation.</p>
             </div>
             <div class="bg-slate-800/30 border border-slate-800 p-6 rounded-xl shadow-sm hover:border-slate-700 transition">
-                <p class="text-xs font-medium text-slate-400 uppercase tracking-wider">Heuristique Majeure</p>
+                <p class="text-xs font-medium text-slate-400 uppercase tracking-wider">Primary Heuristic</p>
                 <p class="text-4xl font-extrabold text-teal-400 mt-2">Manhattan</p>
-                <p class="text-xs text-slate-500 mt-2">Distance géométrique utilisée pour guider la file de priorité.</p>
+                <p class="text-xs text-slate-500 mt-2">Geometric distance used to guide the priority queue.</p>
             </div>
             <div class="bg-slate-800/30 border border-slate-800 p-6 rounded-xl shadow-sm hover:border-slate-700 transition">
-                <p class="text-xs font-medium text-slate-400 uppercase tracking-wider">Fréquence IHM maximale</p>
+                <p class="text-xs font-medium text-slate-400 uppercase tracking-wider">Max GUI Frequency</p>
                 <p class="text-4xl font-extrabold text-purple-400 mt-2">0.5s / act</p>
-                <p class="text-xs text-slate-500 mt-2">Vitesse de rendu adaptative pour les résolutions en temps réel.</p>
+                <p class="text-xs text-slate-500 mt-2">Adaptive rendering speed for real-time resolution.</p>
             </div>
         </section>
 
@@ -63,7 +63,7 @@
             <div class="lg:col-span-2 space-y-8">
                 <!-- Chart Container -->
                 <div class="bg-slate-800/20 border border-slate-800 rounded-xl p-6">
-                    <h3 class="text-lg font-bold text-white mb-4">Analyse de l'Expansion Évolutive des Nœuds (Espace d'États)</h3>
+                    <h3 class="text-lg font-bold text-white mb-4">Evolutionary Node Expansion Analysis (State Space)</h3>
                     <div class="relative w-full h-64">
                         <canvas id="algorithmComparisonChart"></canvas>
                     </div>
@@ -71,21 +71,21 @@
 
                 <!-- Deep Dive Explanations & MathJax formulas -->
                 <div class="bg-slate-800/20 border border-slate-800 rounded-xl p-6 space-y-4">
-                    <h3 class="text-lg font-bold text-white">Formalisation Mathématique & Heuristiques Informées</h3>
+                    <h3 class="text-lg font-bold text-white">Mathematical Formalization & Informed Heuristics</h3>
                     <p class="text-slate-400 text-sm leading-relaxed">
-                        L'évaluation d'un état courant de la matrice s'effectue en projetant la configuration discrète via une fonction de coût. Pour l'algorithme \(A^*\), le choix du prochain nœud à explorer au sein de la structure de tas asymétrique (Min-Heap) est dicté par la formulation standard :
+                        Evaluating the current matrix state is done by projecting the discrete configuration via a cost function. For the \(A^*\) algorithm, the choice of the next node to explore within the asymmetric Min-Heap structure is dictated by the standard formulation:
                     </p>
                     <div class="bg-slate-950 p-4 rounded-lg font-mono text-xs overflow-x-auto text-indigo-300">
                         \(f(n) = g(n) + h(n)\)
                     </div>
                     <p class="text-slate-400 text-sm leading-relaxed">
-                        Où \(g(n)\) représente le nombre de permutations d'adjacence (swaps) exécutées depuis la configuration initiale, et \(h(n)\) correspond à la distance globale de Manhattan, agissant comme borne inférieure admissible de l'énergie résiduelle du système :
+                        Where \(g(n)\) represents the number of adjacency permutations (swaps) executed from the initial configuration, and \(h(n)\) corresponds to the global Manhattan distance, acting as an admissible lower bound of the system's residual energy:
                     </p>
                     <div class="bg-slate-950 p-4 rounded-lg font-mono text-xs overflow-x-auto text-teal-300">
                         \(h(S) = \sum_{i=1}^{m \times n} \left| x_i - x_i^* \right| + \left| y_i - y_i^* \right|\)
                     </div>
                     <p class="text-slate-400 text-sm leading-relaxed">
-                        <strong>Gestion des contraintes non-linéaires :</strong> L'intégration de barrières isolantes (`barriers`) peut bloquer des arêtes spécifiques du graphe, rendant potentiellement la cible inaccessible. Pour prévenir l'exploration infinie de sous-graphes disjoints, un pré-test de connexité basé sur un parcours BFS matriciel rapide (`valid_barriers`) est exécuté avant toute tentative de résolution.
+                        <strong>Handling Non-linear Constraints:</strong> The integration of `barriers` can block specific graph edges, potentially making the target unreachable. To prevent infinite exploration of disjoint subgraphs, a connectivity pre-test based on a fast matrix BFS (`valid_barriers`) is executed before any resolution attempt.
                     </p>
                 </div>
             </div>
@@ -94,20 +94,20 @@
             <div class="space-y-6">
                 <div class="bg-slate-800/40 border border-slate-800 rounded-xl p-6 h-full flex flex-col justify-between">
                     <div>
-                        <h3 class="text-lg font-bold text-white mb-2">Rapport d'Analyse</h3>
-                        <p class="text-sm text-slate-400 mb-4">Examinez le code de structure des classes Grid, Graph, Solver, et le moteur graphique PyGame.</p>
+                        <h3 class="text-lg font-bold text-white mb-2">Analysis Report</h3>
+                        <p class="text-sm text-slate-400 mb-4">Examine the code structure of the Grid, Graph, and Solver classes, and the PyGame graphics engine.</p>
                     </div>
                     
                     <div class="w-full bg-slate-950 rounded-lg overflow-hidden border border-slate-800 flex-grow min-h-[400px] relative">
                         <embed src="Projet_Programmation_ENSAE.pdf" type="application/pdf" class="w-full h-full absolute inset-0" />
                         <div class="absolute inset-0 flex items-center justify-center bg-slate-950/60 pointer-events-none md:hidden">
-                            <p class="text-xs text-slate-400 text-center px-4">Aperçu PDF (Disponible sur écran large ou via téléchargement)</p>
+                            <p class="text-xs text-slate-400 text-center px-4">PDF Preview (Available on wide screens or via download)</p>
                         </div>
                     </div>
 
                     <div class="pt-4">
                         <a href="Projet_Programmation_ENSAE.pdf" download class="w-full block text-center bg-blue-600 hover:bg-blue-500 text-white font-medium py-2.5 px-4 rounded-lg text-sm transition">
-                            Télécharger le rapport complet (PDF)
+                            Download Full Report (PDF)
                         </a>
                     </div>
                 </div>
@@ -121,9 +121,9 @@
         new Chart(ctx, {
             type: 'bar',
             data: {
-                labels: ['Glouton (Naïf)', 'BFS (Largeur)', 'A* (Non Informé)', 'A* (Manhattan)'],
+                labels: ['Greedy (Naive)', 'BFS (Breadth-First)', 'A* (Uninformed)', 'A* (Manhattan)'],
                 datasets: [{
-                    label: 'Nombre moyen de nœuds explorés (Grille 3x3)',
+                    label: 'Average number of nodes explored (3x3 Grid)',
                     data: [4500, 12300, 3100, 420],
                     backgroundColor: [
                         'rgba(239, 68, 68, 0.2)',

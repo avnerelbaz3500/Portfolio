@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monte Carlo ABC Project - Scientific Portfolio</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body class="bg-indigo-950 text-indigo-100 font-sans antialiased min-h-screen">
+
+    <header class="border-b border-indigo-800 bg-indigo-950/80 backdrop-blur sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+            <span class="text-xl font-bold tracking-tight bg-gradient-to-r from-violet-400 to-indigo-500 bg-clip-text text-transparent">Monte Carlo Research</span>
+            <a href="projects.html" class="text-sm text-indigo-400 hover:text-indigo-200 transition">← Back to portfolio</a>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-12">
+        <section class="bg-gradient-to-b from-indigo-900/50 to-indigo-950 border border-indigo-800 rounded-2xl p-8 shadow-xl">
+            <div class="space-y-4">
+                <span class="px-3 py-1 text-xs font-semibold bg-violet-500/10 text-violet-400 border border-violet-500/20 rounded-full uppercase tracking-wider">Bayesian Inference & Sampling</span>
+                <h1 class="text-3xl sm:text-4xl font-extrabold text-white">ABC Inference for Alpha-Stable Models</h1>
+                <p class="text-indigo-300 max-w-3xl text-base leading-relaxed">
+                    A comparative study on Approximate Bayesian Computation (ABC) for parameter estimation of alpha-stable distributions. Given the intractability of the likelihood function, the project implements high-performance simulation kernels and compares various sampling strategies to balance computational cost and posterior accuracy.
+                </p>
+                <div class="flex flex-wrap gap-4 pt-2 text-sm text-indigo-400">
+                    <div><span class="text-indigo-500">Authors:</span> Arthur NEAU, Avner EL BAZ, Mohamed Mahmoud EL GHAOUTH</div>
+                    <div><span class="text-indigo-500">Frameworks:</span> Python, NumPy, SciPy, Matplotlib</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div class="bg-indigo-900/30 border border-indigo-800 p-6 rounded-xl shadow-sm">
+                <p class="text-xs font-medium text-indigo-400 uppercase tracking-wider">Methodology</p>
+                <p class="text-2xl font-bold text-violet-400 mt-2">CMS Generator</p>
+                <p class="text-xs text-indigo-500 mt-2">Chambers-Mallows-Stuck implementation for exact stable sampling.</p>
+            </div>
+            <div class="bg-indigo-900/30 border border-indigo-800 p-6 rounded-xl shadow-sm">
+                <p class="text-xs font-medium text-indigo-400 uppercase tracking-wider">Variance Reduction</p>
+                <p class="text-2xl font-bold text-indigo-400 mt-2">RQMC</p>
+                <p class="text-xs text-indigo-500 mt-2">Sobol & Halton sequences to accelerate integration convergence.</p>
+            </div>
+            <div class="bg-indigo-900/30 border border-indigo-800 p-6 rounded-xl shadow-sm">
+                <p class="text-xs font-medium text-indigo-400 uppercase tracking-wider">Best Performance</p>
+                <p class="text-2xl font-bold text-emerald-400 mt-2">SMC-ABC</p>
+                <p class="text-xs text-indigo-500 mt-2">Geometric epsilon decay for optimal posterior refinement.</p>
+            </div>
+            <div class="bg-indigo-900/30 border border-indigo-800 p-6 rounded-xl shadow-sm">
+                <p class="text-xs font-medium text-indigo-400 uppercase tracking-wider">Complexity</p>
+                <p class="text-2xl font-bold text-pink-400 mt-2">\(\mathcal{O}(T \cdot \text{cost})\)</p>
+                <p class="text-xs text-indigo-500 mt-2">Scaling with iterations and summary statistic evaluation.</p>
+            </div>
+        </section>
+
+        <section class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <div class="lg:col-span-2 space-y-8">
+                <div class="bg-indigo-900/20 border border-indigo-800 rounded-xl p-6">
+                    <h3 class="text-lg font-bold text-white mb-4">Algorithm Convergence (L2 Error)</h3>
+                    <div class="relative w-full h-64">
+                        <canvas id="abcConvergenceChart"></canvas>
+                    </div>
+                </div>
+
+                <div class="bg-indigo-900/20 border border-indigo-800 rounded-xl p-6 space-y-4">
+                    <h3 class="text-lg font-bold text-white">Mathematical Framework & Kernel</h3>
+                    <p class="text-indigo-300 text-sm leading-relaxed">
+                        To estimate parameters \(\theta = (\alpha, \beta, \gamma, \delta)\), we compare simulated summary statistics \(S(Y_{sim})\) against observed data \(S(Y_{obs})\) using a tolerance threshold \(\epsilon\):
+                    </p>
+                    <div class="bg-black/40 p-4 rounded-lg font-mono text-xs overflow-x-auto text-violet-300">
+                        \(d(S(Y_{sim}), S(Y_{obs})) \le \epsilon\)
+                    </div>
+                    <p class="text-indigo-300 text-sm leading-relaxed">
+                        The Sequential Monte Carlo (SMC) approach uses a series of decreasing tolerances \(\epsilon_t\), moving particles toward the true posterior density:
+                    </p>
+                    <div class="bg-black/40 p-4 rounded-lg font-mono text-xs overflow-x-auto text-pink-300">
+                        \(w_t^{(i)} \propto \frac{\pi(\theta_t^{(i)})}{\sum_j w_{t-1}^{(j)} K(\theta_t^{(i)} | \theta_{t-1}^{(j)})}\)
+                    </div>
+                </div>
+            </div>
+
+            <div class="space-y-6">
+                <div class="bg-indigo-900/40 border border-indigo-800 rounded-xl p-6 h-full flex flex-col justify-between">
+                    <div>
+                        <h3 class="text-lg font-bold text-white mb-2">Research Presentation</h3>
+                        <p class="text-sm text-indigo-400 mb-4">Detailed technical slides on the ABC implementation and multivariate extensions.</p>
+                    </div>
+                    
+                    <div class="w-full bg-black/20 rounded-lg overflow-hidden border border-indigo-800 flex-grow min-h-[400px] relative">
+                        <embed src="Présentation Monte-Carlo.pdf" type="application/pdf" class="w-full h-full absolute inset-0" />
+                    </div>
+
+                    <div class="pt-4">
+                        <a href="Présentation Monte-Carlo.pdf" download class="w-full block text-center bg-violet-600 hover:bg-violet-500 text-white font-medium py-2.5 px-4 rounded-lg text-sm transition">
+                            Download Slides (PDF)
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        const ctx = document.getElementById('abcConvergenceChart').getContext('2d');
+        new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: ['Iter 1', 'Iter 2', 'Iter 3', 'Iter 4', 'Iter 5'],
+                datasets: [
+                    { label: 'Rejection ABC', data: [0.8, 0.75, 0.72, 0.7, 0.69], borderColor: '#6366f1', fill: false },
+                    { label: 'SMC-ABC', data: [0.8, 0.5, 0.3, 0.15, 0.08], borderColor: '#10b981', fill: false }
+                ]
+            },
+            options: { responsive: true, maintainAspectRatio: false }
+        });
+    </script>
+</body>
+</html>

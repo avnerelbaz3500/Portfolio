@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Géométrie du Discours Politique - Portfolio</title>
+    <title>Geometry of Political Discourse - Portfolio</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
@@ -13,7 +13,7 @@
     <header class="border-b border-stone-800 bg-stone-950/80 backdrop-blur sticky top-0 z-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
             <span class="text-xl font-bold tracking-tight bg-gradient-to-r from-amber-400 to-orange-500 bg-clip-text text-transparent">Contrastive Rhetoric</span>
-            <a href="projects.html" class="text-sm text-stone-400 hover:text-stone-200 transition">← Retour</a>
+            <a href="projects.html" class="text-sm text-stone-400 hover:text-stone-200 transition">← Back</a>
         </div>
     </header>
 
@@ -23,55 +23,55 @@
                 <span class="px-3 py-1 text-xs font-semibold bg-amber-500/10 text-amber-400 border border-amber-500/20 rounded-full uppercase tracking-wider">Computational Social Science & NLP</span>
                 <h1 class="text-3xl sm:text-4xl font-extrabold text-white">Learning the Geometry of Political Discourse through Contrastive Rhetorical Deformations</h1>
                 <p class="text-stone-400 max-w-3xl text-base leading-relaxed">
-                    Une modélisation géométrique continue de la <em>langue de bois</em> dans le discours politique français (période 1981-1993)[cite: 461, 711]. L'approche substitue aux analyses lexicales de surface un apprentissage de représentation contrastif basé sur l'objectif Multi-Contrastive Noise Contrastive Estimation (NCE)[cite: 449, 701, 703].
+                    A continuous geometric modeling of <em>doublespeak</em> (langue de bois) in French political discourse (1981-1993 period). The approach replaces surface-level lexical analysis with contrastive representation learning based on the Multi-Contrastive Noise Contrastive Estimation (NCE) objective.
                 </p>
                 <div class="flex flex-wrap gap-4 pt-2 text-sm text-stone-400">
-                    <div><span class="text-stone-500">Auteur :</span> Avner EL BAZ (Analyse complémentaire : Gabriel FRANCOIS) [cite: 669, 707]</div>
-                    <div><span class="text-stone-500">Données :</span> 12 497 documents normalisés, découpés en blocs de 450 tokens [cite: 712, 713]</div>
+                    <div><span class="text-stone-500">Author:</span> Avner EL BAZ (Supplementary analysis: Gabriel FRANCOIS)</div>
+                    <div><span class="text-stone-500">Data:</span> 12,497 normalized documents, split into 450-token blocks</div>
                 </div>
             </div>
         </section>
 
         <section class="grid grid-cols-1 sm:grid-cols-3 gap-6">
             <div class="bg-stone-900/40 border border-stone-800 p-6 rounded-xl">
-                <p class="text-xs font-medium text-stone-400 uppercase tracking-wider">Taille du Corpus Réel</p>
-                <p class="text-4xl font-extrabold text-amber-400 mt-2">12 497</p>
-                <p class="text-xs text-stone-500 mt-2">Documents politiques français analysés (Manifestes, Déclarations).</p>
+                <p class="text-xs font-medium text-stone-400 uppercase tracking-wider">Actual Corpus Size</p>
+                <p class="text-4xl font-extrabold text-amber-400 mt-2">12,497</p>
+                <p class="text-xs text-stone-500 mt-2">French political documents analyzed (Manifestos, Declarations).</p>
             </div>
             <div class="bg-stone-900/40 border border-stone-800 p-6 rounded-xl">
-                <p class="text-xs font-medium text-stone-400 uppercase tracking-wider">Segmentation Textuelle</p>
+                <p class="text-xs font-medium text-stone-400 uppercase tracking-wider">Text Segmentation</p>
                 <p class="text-4xl font-extrabold text-orange-400 mt-2">450</p>
-                <p class="text-xs text-stone-500 mt-2">Tokens par chunk superposé avec un pas (stride) de 120 tokens[cite: 713].</p>
+                <p class="text-xs text-stone-500 mt-2">Tokens per chunk, overlapping with a stride of 120 tokens.</p>
             </div>
             <div class="bg-stone-900/40 border border-stone-800 p-6 rounded-xl">
-                <p class="text-xs font-medium text-stone-400 uppercase tracking-wider">Couches Discursives</p>
+                <p class="text-xs font-medium text-stone-400 uppercase tracking-wider">Discursive Layers</p>
                 <p class="text-4xl font-extrabold text-red-400 mt-2">3</p>
-                <p class="text-xs text-stone-500 mt-2">Familles de contraintes étudiées : structurelle, conceptuelle et informationnelle[cite: 526].</p>
+                <p class="text-xs text-stone-500 mt-2">Families of constraints studied: structural, conceptual, and informational.</p>
             </div>
         </section>
 
         <section class="grid grid-cols-1 lg:grid-cols-3 gap-8">
             <div class="lg:col-span-2 space-y-8">
                 <div class="bg-stone-900/20 border border-stone-800 rounded-xl p-6">
-                    <h3 class="text-lg font-bold text-white mb-4">Profil Théorique d'Activation des Contraintes Rhétoriques</h3>
+                    <h3 class="text-lg font-bold text-white mb-4">Theoretical Activation Profile of Rhetorical Constraints</h3>
                     <div class="relative w-full h-80 flex justify-center">
                         <canvas id="rhetoricRadarChart"></canvas>
                     </div>
                 </div>
 
                 <div class="bg-stone-900/20 border border-stone-800 rounded-xl p-6 space-y-4">
-                    <h3 class="text-lg font-bold text-white">Objectif Multi-Contrastive NCE & Fonctionnelles</h3>
+                    <h3 class="text-lg font-bold text-white">Multi-Contrastive NCE Objective & Functionals</h3>
                     <p class="text-stone-400 text-sm leading-relaxed">
-                        Le modèle apprend à séparer les formulations directes \(P_i\) de leurs déformations rhétoriques \(N_i\) via la fonction de coût contrastive suivante[cite: 761, 765]:
+                        The model learns to separate direct formulations \(P_i\) from their rhetorical deformations \(N_i\) via the following contrastive loss function:
                     </p>
                     <div class="bg-stone-950 p-4 rounded-lg font-mono text-xs overflow-x-auto text-amber-300">
-                        \(\mathcal{L}(q,g_{i})=-log\frac{\sum_{p\in P_{i}}exp(sim(q,p)/\tau)}{\sum_{z\in P_{i}\cup N_{i}}exp(sim(q,z)/\tau)}\) [cite: 765]
+                        \(\mathcal{L}(q,g_{i})=-log\frac{\sum_{p\in P_{i}}exp(sim(q,p)/\tau)}{\sum_{z\in P_{i}\cup N_{i}}exp(sim(q,z)/\tau)}\)
                     </div>
                     <p class="text-stone-400 text-sm leading-relaxed">
-                        Deux fonctionnelles permettent d'évaluer l'espace latent au niveau des documents : le score de sensibilité extrême (\(Score_{D}^{max}\)) et le profil distributionnel (\(Score_{D}^{prof}\))[cite: 771, 772, 530]:
+                        Two functionals allow for evaluating the latent space at the document level: the extreme sensitivity score (\(Score_{D}^{max}\)) and the distributional profile (\(Score_{D}^{prof}\)):
                     </p>
                     <div class="bg-stone-950 p-4 rounded-lg font-mono text-xs overflow-x-auto text-orange-300">
-                        \(Score_{D}^{max}=\frac{1}{n}\sum_{j=1}^{n}\max_{g_i \in \mathcal{G}} \mathcal{L}(c_j, g_i)\) [cite: 772]
+                        \(Score_{D}^{max}=\frac{1}{n}\sum_{j=1}^{n}\max_{g_i \in \mathcal{G}} \mathcal{L}(c_j, g_i)\)
                     </div>
                 </div>
             </div>
@@ -79,8 +79,8 @@
             <div class="space-y-6">
                 <div class="bg-stone-900/40 border border-stone-800 rounded-xl p-6 h-full flex flex-col justify-between">
                     <div>
-                        <h3 class="text-lg font-bold text-white mb-2">Papier Scientifique</h3>
-                        <p class="text-sm text-stone-400 mb-4">Lisez le manuscrit complet décrivant la géométrie non-isotrope stable induite par l'espace d'embeddings[cite: 453, 454].</p>
+                        <h3 class="text-lg font-bold text-white mb-2">Scientific Paper</h3>
+                        <p class="text-sm text-stone-400 mb-4">Read the full manuscript describing the stable non-isotropic geometry induced by the embedding space.</p>
                     </div>
                     
                     <div class="w-full bg-stone-950 rounded-lg overflow-hidden border border-stone-800 flex-grow min-h-[400px] relative">
@@ -89,30 +89,30 @@
 
                     <div class="pt-4">
                         <a href="Contrastive Rhetorical Deformations.pdf" download class="w-full block text-center bg-amber-600 hover:bg-amber-500 text-stone-950 font-bold py-2.5 px-4 rounded-lg text-sm transition">
-                            Télécharger l'Article (PDF)
+                            Download Article (PDF)
                         </a>
                     </div>
                 </div>
             </div>
         </section>
- research     </main>
+    </main>
 
     <script>
         const radarCtx = document.getElementById('rhetoricRadarChart').getContext('2d');
         new Chart(radarCtx, {
             type: 'radar',
             data: {
-                labels: ['Structurel (\mathcal{S}_K)', 'Conceptuel (\mathcal{C}_K)', 'Informationnel (\mathcal{I}_K)'], // Répartition du profil discursif [cite: 526, 527]
+                labels: ['Structural (\mathcal{S}_K)', 'Conceptual (\mathcal{C}_K)', 'Informational (\mathcal{I}_K)'],
                 datasets: [
                     {
-                        label: 'Exemple Profil Extrême (e.g., FN / PCF)',
+                        label: 'Example Extreme Profile (e.g., FN / PCF)',
                         data: [0.85, 0.78, 0.92],
                         backgroundColor: 'rgba(245, 158, 11, 0.2)',
                         borderColor: 'rgb(245, 158, 11)',
                         pointBackgroundColor: 'rgb(245, 158, 11)'
                     },
                     {
-                        label: 'Exemple Profil Direct (e.g., Écologistes / Indépendants)',
+                        label: 'Example Direct Profile (e.g., Greens / Independents)',
                         data: [0.32, 0.41, 0.25],
                         backgroundColor: 'rgba(239, 68, 68, 0.2)',
                         borderColor: 'rgb(239, 68, 68)',
