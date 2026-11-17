@@ -2,7 +2,9 @@
 
 Welcome to my personal portfolio repository! 
 
-I am an **AI Engineering Apprentice** at Société Générale Assurance and a Machine Learning & Data Science student at **ENSAE Paris**. This repository serves as a showcase for my work, bridging the gap between applied mathematics (statistical rigor, optimization) and advanced software engineering (MLOps, parallel computing, model efficiency).
+I am an AI R&D Engineer at Ennov and a graduate of ENSAE Paris, where I specialized in Data Science and Artificial Intelligence.
+My work focuses on building AI agents and MCP-based solutions, leveraging generative AI to address challenges in healthcare software products.
+This repository serves as a showcase of my projects and technical work, at the intersection of machine learning, generative AI, applied mathematics, and software engineering.
 
 🔗 **[View my Live Portfolio Website](https://avnerelbaz3500.github.io/Portfolio/index.html)**
 
